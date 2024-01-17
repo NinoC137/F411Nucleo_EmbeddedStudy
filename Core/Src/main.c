@@ -120,8 +120,8 @@ int main(void)
 
   while (1)
   {
-		userApp_1();
-		//userApp_2();
+		//userApp_1();
+		userApp_2();
 		
 		static char strRuntime[16];
 		sprintf(strRuntime, "Run: %dmin %2.0ds", Tim11Counter.timestamp_min

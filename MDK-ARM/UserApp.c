@@ -69,6 +69,12 @@ void userApp_2(){
 		BSP_OLED_ShowString(12, 16, strADC);
 		BSP_OLED_Refresh();
 	}
+	
+	if(adcValue < 300 || adcValue > 3700){
+		HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_SET);
+	}else{
+		HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_RESET);
+	}
 }
 
 /***************************************************************
