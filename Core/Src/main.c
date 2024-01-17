@@ -117,49 +117,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	float Temperature;
-	char TemperatureString[16];
+
   while (1)
   {
-		if(LEDUpdateFlag != 0){
-			LEDUpdateFlag = 0;
-			static int ledupdate;
-			ledupdate++;
-			switch(ledupdate){
-				case 1:
-					HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
-					break;
-				case 2:
-					HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-					break;
-				case 3:
-					HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
-					break;
-				case 4:
-					HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
-					break;
-				case 5:
-					ledupdate = 0;
-					break;
-				default:
-					break;
-			}
-		}
-
-		if(OLEDUpdateFlag != 0){
-			OLEDUpdateFlag = 0; 
-			
-			BSP_UpdateSensorValue();
-			Temperature = BSP_GetSensorValue();
-			sprintf(TemperatureString, "Temp: %4.2f'c", Temperature);	 	//将变量拷贝到数组str1
-			BSP_OLED_ShowString(12, 16, TemperatureString);//显示字符串
-			BSP_OLED_Refresh();
-		}
+		userApp_1();
+		//userApp_2();
 		
 		static char strRuntime[16];
-		sprintf(TemperatureString, "Run:%dmin %ds", Tim11Counter.timestamp_min
+		sprintf(strRuntime, "Run: %dmin %2.0ds", Tim11Counter.timestamp_min
 																							 , Tim11Counter.timestamp_ms/1000);
-		BSP_OLED_ShowString(12, 32, TemperatureString);
+		BSP_OLED_ShowString(12, 32, strRuntime);
 		BSP_OLED_Refresh();
     /* USER CODE END WHILE */
 

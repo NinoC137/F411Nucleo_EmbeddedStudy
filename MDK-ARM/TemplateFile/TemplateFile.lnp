@@ -3,6 +3,7 @@
 "templatefile\main.o"
 "templatefile\stm32f4xx_it.o"
 "templatefile\stm32f4xx_hal_msp.o"
+"templatefile\userapp.o"
 "templatefile\stm32f4xx_hal_adc.o"
 "templatefile\stm32f4xx_hal_adc_ex.o"
 "templatefile\stm32f4xx_ll_adc.o"

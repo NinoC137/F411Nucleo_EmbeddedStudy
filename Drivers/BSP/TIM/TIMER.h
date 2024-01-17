@@ -21,7 +21,9 @@ typedef struct Counters{
 	uint16_t counters;
 	
 	uint8_t LEDUpdate;
-	uint8_t OLEDRefresh;
+	uint8_t TemperatureUpdate;
+	
+	uint8_t keyPressTimer;
 	
 	uint32_t timestamp_ms;
 	uint32_t timestamp_min;

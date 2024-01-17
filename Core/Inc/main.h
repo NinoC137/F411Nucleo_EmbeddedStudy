@@ -51,13 +51,17 @@ extern "C" {
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
 extern TIM_HandleTypeDef htim11;
+extern ADC_HandleTypeDef hadc1;
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void userApp_1(void);
+void userApp_2(void);
+void userApp_3(void);
+void userApp_4(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
